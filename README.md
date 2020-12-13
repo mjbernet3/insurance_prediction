@@ -86,7 +86,7 @@ Another method that we attempted to use was KPrototype clustering. Since we have
 
 As stated previously, even though it was difficult to find meaningful clusters, we were able to gain valuable information from using KMeans with 15 clusters that confirmed our earlier data exploration findings. When observing the average and standard deviation of the charges in each cluster, it is clear that some clusters primarily have much lower charges than others.  To investigate this phenomenon, we looked at the average and standard deviation of each feature for each cluster. Only one feature offered a clear and meaningful explanation for the difference of charges between clusters: smoking. Every cluster that had signficantly higher average charges consisted of only smokers. This evidence confirms the earlier claim made in the data exploration section that smoking is by far the most important feature in determing an individual's risk for high insurance costs. These results coupled with our earlier findings from data exploration lead us to believe that $15000 is the optimal split between high and low cost insurance, as this represents a split between the charges for smokers and non-smokers.
 
-<img width="400" alt="Screen Shot 2020-12-07 at 2 59 04 AM" src="https://user-images.githubusercontent.com/46691358/101324475-52002f80-3838-11eb-80ed-b18f594e1c1b.png"><img width="400" alt="Screen Shot 2020-12-07 at 2 59 39 AM" src="https://user-images.githubusercontent.com/46691358/101324539-680df000-3838-11eb-95c4-a54e66b5d7fc.png">
+<img width="400" alt="cluster-charges" src="https://user-images.githubusercontent.com/46691358/101324475-52002f80-3838-11eb-80ed-b18f594e1c1b.png"><img width="400" alt="cluster-smokers" src="https://user-images.githubusercontent.com/46691358/101324539-680df000-3838-11eb-95c4-a54e66b5d7fc.png">
 
 ## Supervised Learning
 
@@ -98,7 +98,7 @@ We used our unsupervised results to determine the threshold to split high cost v
 
 Linear Regression is among the most common approaches we have seen others use to predict insurance costs. Since this method is so common, we decided to use it as a starting point to compare to our chosen models. This method did not require any hyperparameter tuning and was not one of our primary methods.
 
-<img width="400" alt="Screen Shot 2020-12-13 at 5 37 20 PM" src="https://user-images.githubusercontent.com/46691358/102026544-77c39200-3d6c-11eb-828d-e21bb0db4a09.png"><img width="400" alt="Screen Shot 2020-12-13 at 5 38 31 PM" src="https://user-images.githubusercontent.com/46691358/102026562-9164d980-3d6c-11eb-98d1-1bfe58bdbaad.png">
+<img width="400" alt="linear-r2" src="https://user-images.githubusercontent.com/46691358/102026544-77c39200-3d6c-11eb-828d-e21bb0db4a09.png"><img width="400" alt="linear-mse" src="https://user-images.githubusercontent.com/46691358/102026562-9164d980-3d6c-11eb-98d1-1bfe58bdbaad.png">
 
 ### Random Forest
 
@@ -114,17 +114,17 @@ The search space for RandomizedSearch was set as follows after manual tuning and
 
 #### All Cost Evaluation
 
-<img width="1019" alt="Screen Shot 2020-12-07 at 6 38 39 AM" src="https://user-images.githubusercontent.com/46691358/101346722-fb561e00-3856-11eb-9d65-667d9bfac158.png">
+<img width="1000" alt="forest-all-cost" src="https://user-images.githubusercontent.com/46691358/101346722-fb561e00-3856-11eb-9d65-667d9bfac158.png">
 
 #### High Cost Evaluation
 
-<img width="1021" alt="Screen Shot 2020-12-07 at 6 38 53 AM" src="https://user-images.githubusercontent.com/46691358/101346752-05781c80-3857-11eb-9e09-413b8a281a88.png">
+<img width="1000" alt="forest-high-cost" src="https://user-images.githubusercontent.com/46691358/101346752-05781c80-3857-11eb-9e09-413b8a281a88.png">
 
 #### Low Cost Evaluation
 
-<img width="1005" alt="Screen Shot 2020-12-07 at 6 39 09 AM" src="https://user-images.githubusercontent.com/46691358/101346783-132da200-3857-11eb-9d87-00a2b980f6af.png">
+<img width="1000" alt="forest-low-cost" src="https://user-images.githubusercontent.com/46691358/101346783-132da200-3857-11eb-9d87-00a2b980f6af.png">
 
-<img width="400" alt="Screen Shot 2020-12-13 at 5 37 34 PM" src="https://user-images.githubusercontent.com/46691358/102026593-b6f1e300-3d6c-11eb-9342-802312beaf19.png"><img width="400" alt="Screen Shot 2020-12-13 at 5 38 48 PM" src="https://user-images.githubusercontent.com/46691358/102026607-c7a25900-3d6c-11eb-8c52-1fd36ee82583.png">
+<img width="400" alt="forest-r2" src="https://user-images.githubusercontent.com/46691358/102026593-b6f1e300-3d6c-11eb-9342-802312beaf19.png"><img width="400" alt="forest-mse" src="https://user-images.githubusercontent.com/46691358/102026607-c7a25900-3d6c-11eb-8c52-1fd36ee82583.png">
 
 ### XGBoost
 
@@ -140,17 +140,17 @@ The search space for RandomizedSearch was set as follows after manual tuning and
 
 #### All Cost Evaluation
 
-<img width="1072" alt="Screen Shot 2020-12-07 at 6 02 07 AM" src="https://user-images.githubusercontent.com/46691358/101343344-df03b280-3851-11eb-8475-6b38d09fd4a4.png">
+<img width="1000" alt="boost-all-cost" src="https://user-images.githubusercontent.com/46691358/101343344-df03b280-3851-11eb-8475-6b38d09fd4a4.png">
 
 #### High Cost Evaluation
 
-<img width="1071" alt="Screen Shot 2020-12-07 at 6 02 26 AM" src="https://user-images.githubusercontent.com/46691358/101343381-ed51ce80-3851-11eb-8bda-da338914d583.png">
+<img width="1000" alt="boost-high-cost" src="https://user-images.githubusercontent.com/46691358/101343381-ed51ce80-3851-11eb-8bda-da338914d583.png">
 
 #### Low Cost Evaluation
 
-<img width="1053" alt="Screen Shot 2020-12-07 at 6 02 43 AM" src="https://user-images.githubusercontent.com/46691358/101343412-f8a4fa00-3851-11eb-9167-8114edc2bd5a.png">
+<img width="1000" alt="boost-low-cost" src="https://user-images.githubusercontent.com/46691358/101343412-f8a4fa00-3851-11eb-9167-8114edc2bd5a.png">
 
-<img width="400" alt="Screen Shot 2020-12-13 at 5 37 53 PM" src="https://user-images.githubusercontent.com/46691358/102026617-db4dbf80-3d6c-11eb-86f2-491a96833c33.png"><img width="400" alt="Screen Shot 2020-12-13 at 5 39 01 PM" src="https://user-images.githubusercontent.com/46691358/102026623-e99bdb80-3d6c-11eb-8545-886b78fb8869.png">
+<img width="400" alt="boost-r2" src="https://user-images.githubusercontent.com/46691358/102026617-db4dbf80-3d6c-11eb-86f2-491a96833c33.png"><img width="400" alt="boost-mse" src="https://user-images.githubusercontent.com/46691358/102026623-e99bdb80-3d6c-11eb-8545-886b78fb8869.png">
 
 ### Artificial Neural Network
 
@@ -166,47 +166,47 @@ The search space for RandomizedSearch was set as follows after manual tuning and
 
 #### All Cost Evaluation
 
-<img width="800" alt="Screen Shot 2020-12-07 at 5 21 19 AM" src="https://user-images.githubusercontent.com/46691358/101339272-2c7d2100-384c-11eb-8701-775d1c5f37e4.png">
+<img width="800" alt="ann-all-cost" src="https://user-images.githubusercontent.com/46691358/101339272-2c7d2100-384c-11eb-8701-775d1c5f37e4.png">
 
 #### High Cost Evaluation
 
-<img width="800" alt="Screen Shot 2020-12-07 at 5 21 34 AM" src="https://user-images.githubusercontent.com/46691358/101339322-41f24b00-384c-11eb-9a39-008b97159d96.png">
+<img width="800" alt="ann-high-cost" src="https://user-images.githubusercontent.com/46691358/101339322-41f24b00-384c-11eb-9a39-008b97159d96.png">
 
 #### Low Cost Evaluation
 
-<img width="800" alt="Screen Shot 2020-12-07 at 5 21 50 AM" src="https://user-images.githubusercontent.com/46691358/101339357-50406700-384c-11eb-927c-4f1145258799.png">
+<img width="800" alt="ann-low-cost" src="https://user-images.githubusercontent.com/46691358/101339357-50406700-384c-11eb-927c-4f1145258799.png">
 
-<img width="400" alt="Screen Shot 2020-12-13 at 5 38 08 PM" src="https://user-images.githubusercontent.com/46691358/102026637-033d2300-3d6d-11eb-9b5a-f3cee22afa3f.png"><img width="400" alt="Screen Shot 2020-12-13 at 5 39 16 PM" src="https://user-images.githubusercontent.com/46691358/102026670-18b24d00-3d6d-11eb-9e99-4badab2d44f1.png">
+<img width="400" alt="ann-r2" src="https://user-images.githubusercontent.com/46691358/102026637-033d2300-3d6d-11eb-9b5a-f3cee22afa3f.png"><img width="400" alt="ann-mse" src="https://user-images.githubusercontent.com/46691358/102026670-18b24d00-3d6d-11eb-9e99-4badab2d44f1.png">
 
 ### Supervised Results
 
 After training and evaluating our models with different combinations of parameters, we compared the R2 scores and MSE values of each to determine which offered the best predictions for all, high, and low costs.  A common problem we found was a decrease in performance on high cost data only.  This proved to be significant for linear regression and ANN, and noticeable for Random Forest and XGBoost.  We believe that this is caused by the low number of observations in the high cost training set, so there was little we could do to address this issue.  On the other hand, our best results were from low cost data only, which demonstrates the value of our decision to split. Below is a summary of our supervised metric evaluation.
 
-#### R2 Results
+#### R2 Score Results
 
-<img width="355" alt="Screen Shot 2020-12-07 at 5 22 49 PM" src="https://user-images.githubusercontent.com/46691358/101412712-0dfd4100-38b1-11eb-9f3f-fc24ff751a0e.png">
+<img width="300" alt="r2-summary" src="https://user-images.githubusercontent.com/46691358/101412712-0dfd4100-38b1-11eb-9f3f-fc24ff751a0e.png">
 
 #### MSE Results
 
-<img width="354" alt="Screen Shot 2020-12-07 at 5 23 00 PM" src="https://user-images.githubusercontent.com/46691358/101412738-18b7d600-38b1-11eb-90b0-ae174b9f9616.png">
+<img width="300" alt="mse-summary" src="https://user-images.githubusercontent.com/46691358/101412738-18b7d600-38b1-11eb-90b0-ae174b9f9616.png">
 
 #### All Costs
 
 For our all costs dataset, we found that ANN had the best performance with XGBoost and Random Forest following closely behind. This was a surprising discovery, since we expected ANN to have the best results for high cost data. However, ANN ended up performing significantly worse on high cost data, and as mentioned previously, we believe that this is because of the lack of observations in the set. With more observations in the training set, we believe that ANN would perform the best on the high cost set, but we are glad this method still proved to be useful. We found that 500 iterations, 4 nodes in our hidden layer, relu activation function, lbfgs solver, and an alpha value of 0.0009 led to the best performance for this model on all costs. The predictive performance of this model is shown below.
 
-<img width="400" alt="Screen Shot 2020-12-07 at 6 51 07 AM" src="https://user-images.githubusercontent.com/46691358/101347906-c3e87100-3858-11eb-9bb9-e27c5a437a1d.png">
+<img width="400" alt="best-all-cost" src="https://user-images.githubusercontent.com/46691358/101347906-c3e87100-3858-11eb-9bb9-e27c5a437a1d.png">
 
 #### High Costs
 
 For our high costs dataset, we found that XGBoost had the best performance with Random Forest following closely behind. We found that a squared error learning objective, 166 trees, max depth of 3, column ratio for each tree of 0.9, subsample ratio for each tree of 1, learning rate of 0.06, and gamma value of 0.1 led to the best performance for this model on high costs. The predictive performance of this model is shown below.
 
-<img width="400" alt="Screen Shot 2020-12-07 at 6 51 29 AM" src="https://user-images.githubusercontent.com/46691358/101347947-d662aa80-3858-11eb-9db6-444d58522035.png">
+<img width="400" alt="best-high-cost" src="https://user-images.githubusercontent.com/46691358/101347947-d662aa80-3858-11eb-9db6-444d58522035.png">
 
 #### Low Costs
 
 For our low costs dataset, we found that XGBoost again had the best performance with ANN following extremely closely behind. We found that a squared error learning objective, 195 trees, max depth of 2, column ratio for each tree of 0.6, subsample ratio for each tree of 1, learning rate of 0.07, and gamma value of 0.01 led to the best performance for this model on low costs. The predictive performance of this model is shown below.
 
-<img width="400" alt="Screen Shot 2020-12-07 at 6 51 48 AM" src="https://user-images.githubusercontent.com/46691358/101347988-e7132080-3858-11eb-8b36-91247e438ab8.png">
+<img width="400" alt="best-low-cost" src="https://user-images.githubusercontent.com/46691358/101347988-e7132080-3858-11eb-8b36-91247e438ab8.png">
 
 ## Conclusion
 
