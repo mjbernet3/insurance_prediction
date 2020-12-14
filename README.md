@@ -184,11 +184,11 @@ After training and evaluating our models with different combinations of paramete
 
 #### R2 Score Results
 
-<img width="300" alt="r2-summary" src="https://user-images.githubusercontent.com/46691358/101412712-0dfd4100-38b1-11eb-9f3f-fc24ff751a0e.png">
+<img width="350" alt="r2-summary" src="https://user-images.githubusercontent.com/46691358/101412712-0dfd4100-38b1-11eb-9f3f-fc24ff751a0e.png">
 
 #### MSE Results
 
-<img width="300" alt="mse-summary" src="https://user-images.githubusercontent.com/46691358/101412738-18b7d600-38b1-11eb-90b0-ae174b9f9616.png">
+<img width="350" alt="mse-summary" src="https://user-images.githubusercontent.com/46691358/101412738-18b7d600-38b1-11eb-90b0-ae174b9f9616.png">
 
 #### All Costs
 
